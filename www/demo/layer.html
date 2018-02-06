@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      
+      #streetViewLayerToggle {
+      	position: absolute;
+      	z-index: 10;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 16,
+    center: new google.maps.LatLng(47.6099989, -122.1977202)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+$(function () {
+	var streetViewLayer = new google.maps.StreetViewCoverageLayer();
+	var enabled = false;
+	
+	$('#streetViewLayerToggle').click(function () {
+		if (!enabled) {
+			streetViewLayer.setMap(map);
+		} else {
+			streetViewLayer.setMap(null);
+		}
+		enabled = !enabled;
+	});
+});
+
+    </script>
+  </head>
+  <body>
+  	<button id="streetViewLayerToggle">Street view layer</button>
+    <div id="map-canvas"></div>
+  </body>
+</html>

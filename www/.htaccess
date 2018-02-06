@@ -1,0 +1,2 @@
+#php_value xdebug.remote_enable 1
+#php_value xdebug.remote_autostart 1
