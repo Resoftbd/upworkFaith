@@ -1,0 +1,98 @@
+[12-Feb-2018 18:23:50 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 140
+[12-Feb-2018 18:23:50 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 140
+[12-Feb-2018 18:23:50 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 140
+[12-Feb-2018 18:23:50 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 140
+[12-Feb-2018 18:27:06 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 143
+[12-Feb-2018 18:27:06 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 143
+[12-Feb-2018 18:27:06 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 143
+[12-Feb-2018 18:27:06 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\index.php on line 143
+[14-Feb-2018 18:25:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:26:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:26:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:26:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:26:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:26:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:27:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:33:07 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in C:\xampp\htdocs\oc\lib\classes\Country.php on line 266
+[14-Feb-2018 18:33:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Country::$availableCountries in C:\xampp\htdocs\oc\www\index.php:138
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:34:13 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:34:28 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\oc\www\index.php on line 138
+[14-Feb-2018 18:37:30 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\oc\www\index.php on line 135
+[14-Feb-2018 18:40:46 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\oc\www\index.php on line 135
+[14-Feb-2018 18:50:10 Europe/Berlin] PHP Warning:  array_search() expects parameter 2 to be array, null given in C:\xampp\htdocs\oc\lib\classes\Country.php on line 272
+[15-Feb-2018 05:23:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:290
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AD')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 290
+[15-Feb-2018 05:24:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:290
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AS')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 290
+[15-Feb-2018 05:26:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:291
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AR')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 291
+[15-Feb-2018 16:47:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:291
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AX')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 291
+[15-Feb-2018 16:52:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:291
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AD')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 291
+[15-Feb-2018 16:59:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:292
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AS')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 292
+[15-Feb-2018 16:59:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:292
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('AT')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 292
+[15-Feb-2018 17:00:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on boolean in C:\xampp\htdocs\oc\lib\classes\Country.php:292
+Stack trace:
+#0 C:\xampp\htdocs\oc\www\ajaxGetRegions.php(5): Country::getStates('BD')
+#1 {main}
+  thrown in C:\xampp\htdocs\oc\lib\classes\Country.php on line 292
+[15-Feb-2018 17:01:18 Europe/Berlin] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 12
+[15-Feb-2018 17:01:18 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 18
+[15-Feb-2018 17:05:08 Europe/Berlin] PHP Warning:  Illegal string offset 'country_code' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 19
+[15-Feb-2018 17:05:08 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 19
+[15-Feb-2018 17:25:31 Europe/Berlin] PHP Warning:  Illegal string offset 'country_code' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 20
+[15-Feb-2018 17:25:31 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 20
+[15-Feb-2018 17:25:58 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 20
+[15-Feb-2018 17:25:58 Europe/Berlin] PHP Warning:  Illegal string offset 'name' in C:\xampp\htdocs\oc\www\ajaxGetRegions.php on line 20
+[15-Feb-2018 18:00:19 Europe/Berlin] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in C:\xampp\htdocs\oc\lib\classes\Country.php on line 278
+[15-Feb-2018 18:04:26 Europe/Berlin] PHP Warning:  file_get_contents(http://pano.test:80/index.php): failed to open stream: HTTP request failed!  in C:\xampp\htdocs\oc\lib\classes\TaskManager.php on line 143
+[15-Feb-2018 18:05:16 Europe/Berlin] PHP Warning:  file_get_contents(http://pano.test:80/index.php): failed to open stream: HTTP request failed!  in C:\xampp\htdocs\oc\lib\classes\TaskManager.php on line 143
+[15-Feb-2018 18:10:12 Europe/Berlin] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in C:\xampp\htdocs\oc\lib\classes\GooglePanoramaScraper.php on line 20
