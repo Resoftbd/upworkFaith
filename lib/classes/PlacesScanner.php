@@ -110,6 +110,7 @@
             'veterinary_care' => 'Veterinary Care',
             'zoo' => 'Zoo'
         );
+        // new categories added
         public static $availableTypesID = array(
             'accounting' => '2',
             'airport' => '3',
