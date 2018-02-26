@@ -1,54 +1,54 @@
 <?php
-     include '../environment.php';
-    include ROOT.'/www/ctrl.php';
-     $tasks = Database::connect()->query('SELECT t.*, GROUP_CONCAT(CONCAT(tl.log_time , ": ", tl.event) SEPARATOR "<br>") log, CASE WHEN TIMESTAMPDIFF(SECOND, t.last_pending_time, NOW()) > 3600 THEN 1 ELSE 0 END AS dead
+include '../environment.php';
+include ROOT.'/www/ctrl.php';
+$tasks = Database::connect()->query('SELECT t.*, GROUP_CONCAT(CONCAT(tl.log_time , ": ", tl.event) SEPARATOR "<br>") log, CASE WHEN TIMESTAMPDIFF(SECOND, t.last_pending_time, NOW()) > 3600 THEN 1 ELSE 0 END AS dead
             FROM `tasks` t
             LEFT JOIN `tasks_log` tl ON t.id = tl.task_id
             GROUP BY t.id
             ORDER BY t.start_time DESC, tl.id ASC
             LIMIT 100')->fetchAll(PDO::FETCH_ASSOC);
-     $logApi = Database::connect()->query('SELECT GROUP_CONCAT(CONCAT(tl.log_time , ": ", tl.event) SEPARATOR "<br>") log
+$logApi = Database::connect()->query('SELECT GROUP_CONCAT(CONCAT(tl.log_time , ": ", tl.event) SEPARATOR "<br>") log
             FROM `tasks` t
             LEFT JOIN `tasks_api_log` tl ON t.id = tl.task_id
             GROUP BY t.id
             ORDER BY t.start_time DESC, tl.id ASC
             LIMIT 100')->fetchAll(PDO::FETCH_ASSOC);
-     $ind=0;
-     
-     function cut($str) {
-         return mb_substr($str, 0, 63) . (mb_strlen($str) > 63 ? '...' : '');
-     }
-     
-     function human_filesize($bytes, $dec = 2)
-     {
-         $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
-         $factor = floor((strlen($bytes) - 1) / 3);
-     
-         return sprintf("%.{$dec}f", $bytes / pow(1024, $factor)) . @$size[$factor];
-     }
+$ind=0;
 
-     foreach ($tasks as $i => $task) {
-         $filepath = OUTPUT_DIR.'/'.$tasks[$i]['csv_with_pano'];
-         if (is_readable($filepath) && is_file($filepath)) {
-            $tasks[$i]['csv_with_pano_size'] = human_filesize(filesize($filepath), 0);
-         }
-         $filepath = OUTPUT_DIR.'/'.$tasks[$i]['csv_without_pano'];
-         if (is_readable($filepath) && is_file($filepath)) {
-            $tasks[$i]['csv_without_pano_size'] = human_filesize(filesize($filepath), 0);
-         }
-     }
+function cut($str) {
+    return mb_substr($str, 0, 63) . (mb_strlen($str) > 63 ? '...' : '');
+}
+
+function human_filesize($bytes, $dec = 2)
+{
+    $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    $factor = floor((strlen($bytes) - 1) / 3);
+
+    return sprintf("%.{$dec}f", $bytes / pow(1024, $factor)) . @$size[$factor];
+}
+
+foreach ($tasks as $i => $task) {
+    $filepath = OUTPUT_DIR.'/'.$tasks[$i]['csv_with_pano'];
+    if (is_readable($filepath) && is_file($filepath)) {
+        $tasks[$i]['csv_with_pano_size'] = human_filesize(filesize($filepath), 0);
+    }
+    $filepath = OUTPUT_DIR.'/'.$tasks[$i]['csv_without_pano'];
+    if (is_readable($filepath) && is_file($filepath)) {
+        $tasks[$i]['csv_without_pano_size'] = human_filesize(filesize($filepath), 0);
+    }
+}
 ?>
 
 
 <html>
 <head>
     <title>Google SEE INSIDE</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <style type="text/css">
         thead {
             font-weight: bolder;
         }
-    
+
         td {
             font-size: 12px;
             background-color: #eef;
@@ -56,7 +56,13 @@
     </style>
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
-        window.setInterval(function () {location.reload();}, 10000);
+        var t=0;
+
+        // click on #button1 will be able to clear this interval
+        var i = window.setInterval(function () {
+            location.reload();
+        }, 5000);
+
 
         $(document).ready(function () {
             $('.remove-button').click(function () {
@@ -81,10 +87,27 @@
                 var id = $(this).attr('data-id');
                 $.post('ajaxStopTask.php', {id: id}, function() {location.reload();});
             });
-        });        
+            $(".button1").click (function() {
+                if(t==0){
+                window.clearInterval(i);
+                    $("#button1").html('Start Refreshing');
+                t=1;
+                }
+                else if(t==1)
+                {
+                    i = window.setInterval(function () {
+                        location.reload();
+                    }, 5000);
+                    $("#button1").html('Stop Refreshing');
+                    t=0;
+                }
+            });
+
+        });
+
     </script>
 </head>
-<body>    
+<body>
 <nav class="navbar navbar-default">
     <div class="container-fluid main-toolbar myToolBar">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -96,7 +119,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="index.php" >Dashboard</a></li>
@@ -113,23 +136,27 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Button to toggle refresh -->
+<button id="button1" class="button1">Stop Refreshing</button>
+
 <table style="width:100%" border="1">
     <thead>
-        <tr>
-            <td>Name</td>
-            <td>Progress</td>
-            <td>Failed</td>
-            <td>Status</td>
-            <td>Log</td>
-            <td>Api Log</td>
-            <td>Started at</td>
-            <td>Updated at</td>
-            <td>Links</td>
-            <td></td>
-        </tr>
+    <tr>
+        <td>Name</td>
+        <td>Progress</td>
+        <td>Failed</td>
+        <td>Status</td>
+        <td>Log</td>
+        <td>Api Log</td>
+        <td>Started at</td>
+        <td>Updated at</td>
+        <td>Links</td>
+        <td></td>
+    </tr>
     </thead>
     <tbody>
-        <?php foreach ($tasks as $task): ?>
+    <?php foreach ($tasks as $task): ?>
         <tr>
             <td title="<?php echo $task['name'] ?>"><?php echo cut($task['name']); ?></td>
             <td><?php echo (int)$task['processed'].'/'.(int)$task['total']; ?></td>
@@ -153,7 +180,7 @@
                 <?php if ($task['csv_with_pano_size'] || $task['dead']): ?>
                     <input type="button" value="Remove" class="remove-button" data-id="<?php echo $task['id'] ?>" />
                     <?php if ($task['csv_with_pano'] == NULL && $task['csv_without_pano'] == NULL) :?>
-                    <input type="button" value="Export CSV" class="csv-button" data-id="<?php echo $task['id'] ?>" />
+                        <input type="button" value="Export CSV" class="csv-button" data-id="<?php echo $task['id'] ?>" />
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if (!$task['stop'] && !($task['csv_with_pano_size'] || $task['dead'])): ?>
@@ -161,7 +188,7 @@
                 <?php endif; ?>
             </td>
         </tr>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
     </tbody>
 </table>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
