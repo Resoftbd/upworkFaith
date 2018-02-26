@@ -96,3 +96,6 @@ Stack trace:
 [15-Feb-2018 18:04:26 Europe/Berlin] PHP Warning:  file_get_contents(http://pano.test:80/index.php): failed to open stream: HTTP request failed!  in C:\xampp\htdocs\oc\lib\classes\TaskManager.php on line 143
 [15-Feb-2018 18:05:16 Europe/Berlin] PHP Warning:  file_get_contents(http://pano.test:80/index.php): failed to open stream: HTTP request failed!  in C:\xampp\htdocs\oc\lib\classes\TaskManager.php on line 143
 [15-Feb-2018 18:10:12 Europe/Berlin] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in C:\xampp\htdocs\oc\lib\classes\GooglePanoramaScraper.php on line 20
+[21-Feb-2018 18:42:38 Europe/Berlin] PHP Warning:  array_values() expects parameter 1 to be array, null given in C:\xampp\htdocs\oc\www\scheduler.php on line 124
+[21-Feb-2018 18:43:16 Europe/Berlin] PHP Warning:  array_values() expects parameter 1 to be array, null given in C:\xampp\htdocs\oc\www\scheduler.php on line 124
+[21-Feb-2018 18:43:19 Europe/Berlin] PHP Warning:  array_values() expects parameter 1 to be array, null given in C:\xampp\htdocs\oc\www\scheduler.php on line 124
