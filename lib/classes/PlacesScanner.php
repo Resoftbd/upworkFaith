@@ -100,9 +100,11 @@
             'storage' => 'Storage',
             'store' => 'Store',
             'subway_station' => 'Subway Station',
+            'supermarket' => 'Supermarket',
             'synagogue' => 'Synagogue',
             'taxi_stand' => 'Taxi Stand',
             'train_station' => 'Train Station',
+            'transit_station' => 'Transit Station',
             'travel_agency' => 'Travel Agency',
             'university' => 'University',
             'veterinary_care' => 'Veterinary Care',
@@ -192,13 +194,15 @@
             'storage' => '88',
             'store' => '89',
             'subway_station' => '90',
-            'synagogue' => '91',
-            'taxi_stand' => '92',
-            'train_station' => '93',
-            'travel_agency' => '94',
-            'university' => '95',
-            'veterinary_care' => '96',
-            'zoo' => '97'
+            'supermarket' => '91',
+            'synagogue' => '92',
+            'taxi_stand' => '93',
+            'train_station' => '94',
+            'transit_station' => '95',
+            'travel_agency' => '96',
+            'university' => '97',
+            'veterinary_care' => '98',
+            'zoo' => '99'
         );
         public static $all = 'all';
 
