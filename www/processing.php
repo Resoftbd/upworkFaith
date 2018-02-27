@@ -89,9 +89,9 @@ foreach ($tasks as $i => $task) {
             });
             $(".button1").click (function() {
                 if(t==0){
-                window.clearInterval(i);
+                    window.clearInterval(i);
                     $("#button1").html('Start Refreshing');
-                t=1;
+                    t=1;
                 }
                 else if(t==1)
                 {

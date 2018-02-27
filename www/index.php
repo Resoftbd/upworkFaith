@@ -33,6 +33,7 @@ if(isset($_POST)){
 		$message .= 'Please fill at least one field';
 	}
 }
+$countryName  = Country::getCountry();
 ?>
 
 <html>
@@ -52,6 +53,8 @@ if(isset($_POST)){
 
         	$('select[name=country]').change(function () {
             	var country = $(this).val();
+            	console.log(country);
+
 
             	if (!country) {
                 	$('#state-field').html('<input type="text" name="state" value="">');
@@ -79,7 +82,7 @@ if(isset($_POST)){
 									function(response){
 										console.log(response);
 										if(response){
-													$('#city-field').html(response);
+                                            $('#city-field').html(response);
 										}
 									}
 								);
@@ -130,8 +133,8 @@ if(isset($_POST)){
             <label>Country:</label>
             <select name="country" id="country">
             <option value="-">Not selected</option>
-            <?php foreach(Country::$availableCountries as $country): ?>
-            <option value="<?php echo $country ?>"><?php echo $country ?></option>
+            <?php foreach($countryName as $country): ?>
+            <option value="<?php echo $country['country_code'] ?>"><?php echo $country['name'] ?></option>
             <?php endforeach; ?>
             </select>
         </div>
